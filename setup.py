@@ -1,6 +1,6 @@
 """Setup the ezrassor_keyboard_controller module."""
-import setuptools
 import glob
+import setuptools
 
 
 setuptools.setup(
