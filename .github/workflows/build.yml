@@ -81,7 +81,7 @@ jobs:
       run: |
         . /opt/ros/foxy/setup.bash
         . install/setup.bash
-        launch_test src/test/integ/ezrassor_keyboard_controller/test_keyboard_controller.py \
+        launch_test src/ezrassor_keyboard_controller/test/integ/ezrassor_keyboard_controller/test_keyboard_controller.py \
           --verbose >> log/latest_integ
 
     - name: Upload integration test log
