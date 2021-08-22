@@ -46,7 +46,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: FlaSpaceInst/ezrassor_keyboard_interfaces
-        path: src
+        path: src/interfaces
 
     - name: Install dependencies
       run: rosdep install --from-paths src --ignore-src -r -y --rosdistro=foxy
