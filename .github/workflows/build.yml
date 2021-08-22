@@ -52,7 +52,9 @@ jobs:
       run: rosdep install --from-paths src --ignore-src -r -y --rosdistro=foxy
 
     - name: Install repository
-      run: colcon build
+      run: |
+        . /opt/ros/foxy/setup.bash
+        colcon build
 
     - name: Upload build logs
       uses: actions/upload-artifact@v1
