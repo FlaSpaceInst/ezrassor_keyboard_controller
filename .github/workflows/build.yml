@@ -40,24 +40,21 @@ jobs:
     - name: Pull repository
       uses: actions/checkout@v2
       with:
-        path: src
+        path: src/ezrassor_keyboard_controller
         
     - name: Pull interfaces dependency
       uses: actions/checkout@v2
       with:
         repository: FlaSpaceInst/ezrassor_keyboard_interfaces
-        path: deps
+        path: src/ezrassor_keyboard_interfaces
         
     - name: Install dependencies
       run: rosdep install --from-paths src --ignore-src -r -y --rosdistro=foxy
 
-    - name: fuck
-      run: ls && ls src/ && ls deps/
-
     - name: Install repository
       run: |
         . /opt/ros/foxy/setup.bash
-        colcon build --paths src/* deps/*
+        colcon build
 
     - name: Upload build logs
       uses: actions/upload-artifact@v1
