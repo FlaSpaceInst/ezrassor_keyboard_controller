@@ -14,10 +14,10 @@
   <author email="ez.rassor@gmail.com">EZRASSOR Team</author>
   <license>MIT</license>
 
+  <depend>ezrassor_keyboard_interfaces</depend>
   <depend>geometry_msgs</depend>
   <depend>launch</depend>
   <depend>launch_ros</depend>
-  <depend>pynput-pip</depend>
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
 
