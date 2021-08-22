@@ -51,6 +51,9 @@ jobs:
     - name: Install dependencies
       run: rosdep install --from-paths src --ignore-src -r -y --rosdistro=foxy
 
+    - name: fuck
+      run: ls && ls src/ && ls deps/
+
     - name: Install repository
       run: |
         . /opt/ros/foxy/setup.bash
