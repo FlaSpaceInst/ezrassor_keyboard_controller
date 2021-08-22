@@ -43,15 +43,18 @@ jobs:
         path: src
         
     - name: Pull interfaces dependency
-      run: git clone https://github.com/FlaSpaceInst/ezrassor_keyboard_interfaces src/ezrassor_keyboard_interfaces
-
+      uses: actions/checkout@v2
+      with:
+        repository: FlaSpaceInst/ezrassor_keyboard_interfaces
+        path: src/deps
+        
     - name: Install dependencies
       run: rosdep install --from-paths src --ignore-src -r -y --rosdistro=foxy
 
     - name: Install repository
       run: |
         . /opt/ros/foxy/setup.bash
-        colcon build
+        colcon build --paths src/* src/deps/*
 
     - name: Upload build logs
       uses: actions/upload-artifact@v1
